@@ -7,7 +7,12 @@
         </template>
       </v-breadcrumbs>
 
-      <v-btn style="background-color: green; color: white; margin-bottom: 15px;">Thêm mới</v-btn>
+      <v-btn 
+        style="background-color: green; 
+        color: white; 
+        margin-bottom: 15px;"
+        @click="dialog = true"
+        >Thêm mới</v-btn>
 
       <v-card
         style="padding: 10px"
@@ -21,7 +26,7 @@
       </v-card>
 
     </v-container>
-    <Dialog_ThemMoiTaiKhoanNganHang ></Dialog_ThemMoiTaiKhoanNganHang>
+    <Dialog_ThemMoiTaiKhoanNganHang :set-dialog="dialog" @setDialogs = "setDialog"></Dialog_ThemMoiTaiKhoanNganHang>
   </nav-admin-clmm>
 </template>
 <script>
@@ -31,6 +36,7 @@ import NavAdminClmm from './layout/NavAdminClmm.vue';
 export default {
   data () {
     return {
+      dialog: false,
       search: '',
       headers: [
         {
@@ -184,6 +190,12 @@ export default {
   components:{
     NavAdminClmm: NavAdminClmm,
     Dialog_ThemMoiTaiKhoanNganHang: Dialog_ThemMoiTaiKhoanNganHang
+  },
+  methods:{
+    setDialog(value){
+      this.dialog = value
+      console.log(this.dialog)
+    }
   }
 }
 </script>
