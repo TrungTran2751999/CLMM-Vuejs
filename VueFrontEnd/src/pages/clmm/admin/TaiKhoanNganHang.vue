@@ -194,7 +194,7 @@ export default {
   methods:{
     setDialog(value){
       this.dialog = value
-      console.log(this.dialog)
+      console.log("huhuh")
     }
   }
 }

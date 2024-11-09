@@ -1,13 +1,12 @@
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Address } from "./address";
 
-@Entity({name: "ngan_hang"})
-export class NganHang{
+@Entity({name: "lich_su_choi"})
+export class LichSuChoi{
     @PrimaryGeneratedColumn()
     Id?:number;
 
-    @Column({name:"PhoneNumber"})
-    PhoneNumber?:string;
+    @Column({name:"IdUser"})
+    IdUser?:number;
 
     @Column({name:"MaGD"})
     MaGD?:string;

@@ -15,6 +15,12 @@ export class UserEntity{
     @Column({name:"Password"})
     Password?:string;
 
+    @Column({name:"PhoneNumber"})
+    PhoneNumber?:string
+
+    @Column({name:"TaiKhoanNganHang"})
+    TaiKhoanNganHang?:string
+
     @Column({name:"CreatedAt"})
     CreatedAt?:Date = null
 

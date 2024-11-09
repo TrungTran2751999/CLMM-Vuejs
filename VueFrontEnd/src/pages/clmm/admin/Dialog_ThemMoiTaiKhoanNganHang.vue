@@ -1,8 +1,22 @@
 <template>
     <v-dialog
-      v-model="dialog"
+      v-model="this.$props.setDialog"
+      max-width="600"
     >
-    <v-btn @click="setValueDialog">ahihi</v-btn>
+      <v-card
+      title="Thêm mới tài khoản ngân hàng"
+      >
+        <v-col>
+          <v-text-field label="Số tài khoản" variant="outlined" ></v-text-field>
+          <v-text-field label="Số tài khoản" variant="outlined" ></v-text-field>
+        </v-col>
+        <v-divider></v-divider>
+        <v-row>
+          <v-col cols="4">
+            <v-btn>SAVE</v-btn>
+          </v-col>
+        </v-row>
+      </v-card>
     </v-dialog>
 </template>
 <script>
@@ -14,20 +28,19 @@
     },
     data () {
       return {
-        dialog: this.setDialog
+        dialog: false
       }
     },
     methods:{
       setValueDialog(){
-        this.dialog = false
-        this.$emit("setDialogs", this.dialog)
+        this.$emit("setDialogs", false)
       }
     },
     watch:{
-      setDialog(dialogs){
-         this.dialog = dialogs
-        // tuong trung cho useEffect trong Reactjs
-      }
+      // setDialog(dialogs){
+      //    this.dialog = dialogs
+      //   // tuong trung cho useEffect trong Reactjs
+      // }
     },
     components:{
       

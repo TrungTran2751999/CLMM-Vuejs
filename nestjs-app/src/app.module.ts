@@ -8,6 +8,9 @@ import { Address } from './models/address';
 import { Client } from './models/Client';
 import { JwtModule } from '@nestjs/jwt';
 import { UserController } from './controllers/user.controller';
+import { TaiKhoanNganHang } from './models/TaiKhoanNganHang';
+import { LichSuChoi } from './models/LichSuChoi';
+import { TaiKhoanNganHangModule } from './modules/taiKhoanNganHang.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -17,10 +20,11 @@ import { UserController } from './controllers/user.controller';
     username: "root",
     password: "123456",
     database: "clmm",
-    entities: [UserEntity, Address, Client],
+    entities: [UserEntity, Address, Client, TaiKhoanNganHang, LichSuChoi],
     synchronize: true
   }), 
   UserModel,
+  TaiKhoanNganHangModule,
   JwtModule.register({
     secret:"fjojsdofjsdofjsdlfjsdlfjsdflsd",
     signOptions: {

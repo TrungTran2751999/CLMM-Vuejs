@@ -1,8 +1,8 @@
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Address } from "./address";
 
-@Entity({name: "tai_khoan_quet_qr"})
-export class LichsuThang{
+@Entity({name: "tai_khoan_ngan_hang"})
+export class TaiKhoanNganHang{
     @PrimaryGeneratedColumn()
     Id?:number;
 
@@ -12,7 +12,7 @@ export class LichsuThang{
     @Column({name:"TenNguoiNhan"})
     TenNguoiNhan?:string;
 
-    @Column({name:"Password"})
+    @Column({name:"NganHang"})
     NganHang?:number;
 
     @Column({name:"Status"})
